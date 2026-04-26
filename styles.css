@@ -4,16 +4,36 @@ body {
   background: #fff0f3;
   font-family: "Press Start 2P", monospace;
   color: #b3003c;
+  overflow-x: hidden;
 }
 
-/* cherry repeating background vibe */
+/* CHERRY BACKGROUND LAYER */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background: url("https://i.imgur.com/6Qx3y5k.png");
-  opacity: 0.08;
+  z-index: -1; /* <-- pushes it behind EVERYTHING */
+  
+  background-image: url("images/cherries.png"); 
+  /* ^ use a repeating cherry/pixel pattern image */
+
+  background-repeat: repeat;
+  background-size: 120px; /* tweak for density */
+
+  opacity: 0.15;
   pointer-events: none;
+
+  animation: cherryDrift 60s linear infinite;
+}
+
+/* slow diagonal drift (down + left) */
+@keyframes cherryDrift {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-200px, 200px);
+  }
 }
 
 /* ===== gate ===== */
