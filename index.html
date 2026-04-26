@@ -5,47 +5,55 @@
   <meta charset="UTF-8">
   <title>Momomeifen ✧</title>
 
-  <!-- mobile scaling -->
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- font -->
-
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;600&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
-<!-- music box -->
+<!-- ENTER SCREEN -->
 
-<div class="music-box">
-  <p>♫ music</p>
-  <iframe width="200" height="113"
-    src="https://www.youtube.com/embed/enygn6tBW1w?autoplay=1&loop=1&playlist=VIDEO_ID">
-  </iframe>
+<div id="enterScreen">
+  <div class="enter-box">
+    <h1>momomeifen ♡</h1>
+    <button onclick="enterSite()">enter site ✧</button>
+  </div>
 </div>
 
-<div class="card">
-  <img src="images/avatar.png" class="avatar">
+<!-- MUSIC -->
 
-  <div class="content">
-    <h1>momomeifen ♡</h1>
-    <p>haiiii welcome to my page ✧</p>
+<audio id="bgMusic" loop>
+  <source src="music/index.mp3" type="audio/mpeg">
+</audio>
+
+<!-- MAIN CONTENT -->
+
+<div id="mainContent" style="display:none;">
+
+  <div class="card">
+    <img src="images/avatar.png" class="avatar">
 
 ```
-<div class="buttons">
-  <a href="commissions.html">Commissions</a>
-  <a href="faq.html">FAQ</a>
-  <a href="ratings.html">Ratings</a>
-  <button onclick="openPopup()">About Me</button>
+<div class="content">
+  <h1>momomeifen ♡</h1>
+  <p>haiiii welcome to my page ✧</p>
+
+  <div class="buttons">
+    <a href="commissions.html">Commissions</a>
+    <a href="faq.html">FAQ</a>
+    <a href="ratings.html">Ratings</a>
+    <button onclick="openPopup()">About Me</button>
+  </div>
 </div>
 ```
 
   </div>
+
 </div>
 
-<!-- popup -->
+<!-- POPUP -->
 
 <div id="popup" class="popup">
   <div class="popup-content">
@@ -57,6 +65,14 @@
 </div>
 
 <script>
+function enterSite() {
+  document.getElementById("enterScreen").style.display = "none";
+  document.getElementById("mainContent").style.display = "block";
+
+  const music = document.getElementById("bgMusic");
+  music.play();
+}
+
 function openPopup() {
   document.getElementById("popup").style.display = "flex";
 }
