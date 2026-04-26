@@ -1,1 +1,128 @@
+/* ===== base ===== */
+body {
+  margin: 0;
+  background: #fff0f3;
+  font-family: "Press Start 2P", monospace;
+  color: #b3003c;
+}
 
+/* cherry repeating background vibe */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: url("https://i.imgur.com/6Qx3y5k.png");
+  opacity: 0.08;
+  pointer-events: none;
+}
+
+/* ===== gate ===== */
+#gate {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle, #ffd1dc, #fff0f3);
+}
+
+.gate-card {
+  background: white;
+  border: 4px solid #ff4d6d;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 6px 6px 0 #ff4d6d;
+}
+
+.gate-avatar {
+  width: 90px;
+  image-rendering: pixelated;
+  margin-bottom: 10px;
+}
+
+button {
+  font-family: inherit;
+  background: #ff4d6d;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  margin-top: 10px;
+  box-shadow: 3px 3px 0 #b3003c;
+}
+
+button:hover {
+  transform: translate(-1px, -1px);
+}
+
+/* ===== layout ===== */
+.hidden { display: none; }
+
+.topbar {
+  background: #ff4d6d;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+.layout {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* ===== panels ===== */
+.panel, .maincard {
+  background: white;
+  border: 3px solid #ff4d6d;
+  box-shadow: 5px 5px 0 #ffb3c1;
+  padding: 15px;
+}
+
+.panel {
+  width: 200px;
+  text-align: center;
+}
+
+.avatar {
+  width: 100%;
+  image-rendering: pixelated;
+  border: 2px solid #ff4d6d;
+}
+
+/* nav links */
+.nav a, .socials a {
+  display: block;
+  margin: 8px 0;
+  text-decoration: none;
+  color: #b3003c;
+}
+
+.nav a:hover, .socials a:hover {
+  color: #ff4d6d;
+}
+
+/* ===== main card ===== */
+.maincard {
+  flex: 1;
+}
+
+h2 {
+  font-size: 14px;
+}
+
+.desc {
+  font-family: "STIX Two Text", serif;
+  font-size: 14px;
+}
+
+/* ===== dropdown ===== */
+.dropdown {
+  margin-top: 20px;
+}
+
+.dropcontent {
+  margin-top: 10px;
+  padding: 10px;
+  border: 2px dashed #ff4d6d;
+  font-family: "STIX Two Text", serif;
+}
