@@ -13,39 +13,49 @@
 
 <body>
 
-<!-- ENTER SCREEN -->
+<!-- 🌸 ENTER SCREEN -->
 
 <div id="enterScreen">
   <div class="enter-box">
     <h1>momomeifen ♡</h1>
-    <button onclick="enterSite()">enter site ✧</button>
+    <button onclick="enterSite()">enter ✧</button>
   </div>
 </div>
 
-<!-- MUSIC -->
+<!-- 🎵 MUSIC -->
 
 <audio id="bgMusic" loop>
   <source src="music/index.mp3" type="audio/mpeg">
 </audio>
 
-<!-- MAIN CONTENT -->
+<!-- 💖 MAIN -->
 
-<div id="mainContent" style="display:none;">
+<div id="mainContent">
 
-  <div class="card">
-    <img src="images/avatar.png" class="avatar">
+  <div class="container">
 
 ```
-<div class="content">
-  <h1>momomeifen ♡</h1>
-  <p>haiiii welcome to my page ✧</p>
-
-  <div class="buttons">
-    <a href="commissions.html">Commissions</a>
-    <a href="faq.html">FAQ</a>
-    <a href="ratings.html">Ratings</a>
-    <button onclick="openPopup()">About Me</button>
+<!-- profile card -->
+<div class="card profile">
+  <img src="images/avatar.png" class="avatar">
+  <div>
+    <h2>momomeifen ♡</h2>
+    <p>digital artist ✧ commissions open</p>
   </div>
+</div>
+
+<!-- nav card -->
+<div class="card nav">
+  <a href="commissions.html">✦ commissions</a>
+  <a href="faq.html">✦ faq</a>
+  <a href="ratings.html">✦ ratings</a>
+  <button onclick="openPopup()">✦ about me</button>
+</div>
+
+<!-- mini info card -->
+<div class="card small">
+  <p>♡ status: open</p>
+  <p>♡ turn around: 3–7 days</p>
 </div>
 ```
 
@@ -53,14 +63,13 @@
 
 </div>
 
-<!-- POPUP -->
+<!-- 🌸 POPUP -->
 
 <div id="popup" class="popup">
   <div class="popup-content">
     <span class="close" onclick="closePopup()">×</span>
-    <h2>About Me ♡</h2>
-    <p>hai my name is momomeifen !! ✧</p>
-    <p>i love drawing cute things and pink aesthetics ♡</p>
+    <h3>about me ♡</h3>
+    <p>hai im momomeifen !! i draw cute stuff ✧</p>
   </div>
 </div>
 
@@ -68,9 +77,7 @@
 function enterSite() {
   document.getElementById("enterScreen").style.display = "none";
   document.getElementById("mainContent").style.display = "block";
-
-  const music = document.getElementById("bgMusic");
-  music.play();
+  document.getElementById("bgMusic").play();
 }
 
 function openPopup() {
