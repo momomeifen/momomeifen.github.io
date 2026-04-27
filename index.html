@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>your site</title>
+  <title>momomeifen</title>
 
   <link rel="icon" type="image/png" href="images/favicon.png">
   <link rel="stylesheet" href="styles.css"/>
@@ -13,7 +13,7 @@
 
 <body>
 
-<!-- ENTRY GATE -->
+<!-- ENTRY GATE (ONLY SHOWS ON FIRST LOAD) -->
 <div id="gate">
   <div class="gate-card">
     <img src="images/avatar.png" class="gate-avatar">
@@ -29,7 +29,7 @@
 <div id="site" class="hidden">
 
   <header class="topbar">
-    MOMO!
+    <span class="homebtn" onclick="goHome()">MOMO</span>
   </header>
 
   <main class="layout">
@@ -43,7 +43,7 @@
           <span></span>
           <span></span>
         </div>
-        <div class="title"> momomeifen.exe </div>
+        <div class="title">momomeifen.exe</div>
       </div>
 
       <!-- CONTENT -->
@@ -86,6 +86,8 @@
 </div>
 
 <script>
+let hasEntered = false;
+
 function enterSite() {
   document.getElementById("gate").style.display = "none";
   document.getElementById("site").classList.remove("hidden");
@@ -93,6 +95,13 @@ function enterSite() {
   const music = document.getElementById("bgm");
   music.volume = 0.4;
   music.play();
+
+  hasEntered = true;
+}
+
+/* MOMO = always returns WITHOUT reloading gate */
+function goHome() {
+  document.querySelector(".window").scrollIntoView({ behavior: "smooth" });
 }
 </script>
 
