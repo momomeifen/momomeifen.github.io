@@ -266,6 +266,13 @@ h2 {
   margin-top: 6px;
 }
 
+.goal-desc {
+  font-size: 10px;
+  margin-top: 10px;
+  line-height: 1.5;
+  opacity: 0.85;
+}
+
 /* ===== MOBILE FIX ===== */
 @media (max-width: 700px) {
   .window-content {
