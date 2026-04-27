@@ -1,4 +1,4 @@
-/* ===== base ===== */
+/* ===== BASE ===== */
 body {
   margin: 0;
   background: #fff0f3;
@@ -7,18 +7,16 @@ body {
   overflow-x: hidden;
 }
 
-/* CHERRY BACKGROUND LAYER */
+/* 🍒 CHERRY BACKGROUND */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
-  z-index: -1; /* <-- pushes it behind EVERYTHING */
-  
-  background-image: url("/images/cherries.png"); 
-  /* ^ use a repeating cherry/pixel pattern image */
+  z-index: -1;
 
+  background-image: url("images/cherries.png");
   background-repeat: repeat;
-  background-size: 120px; /* tweak for density */
+  background-size: 200px;
 
   opacity: 0.15;
   pointer-events: none;
@@ -26,17 +24,23 @@ body::before {
   animation: cherryDrift 60s linear infinite;
 }
 
-/* slow diagonal drift (down + left) */
 @keyframes cherryDrift {
-  0% {
-    transform: translate(0, 0);
-  }
-  100% {
-    transform: translate(-200px, 200px);
-  }
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(-200px, 200px); }
 }
 
-/* ===== gate ===== */
+/* soft glow layer */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background:
+    radial-gradient(circle at 20% 20%, #ffd1dc55, transparent 60%),
+    radial-gradient(circle at 80% 70%, #ff4d6d33, transparent 60%);
+}
+
+/* ===== GATE ===== */
 #gate {
   height: 100vh;
   display: flex;
@@ -56,9 +60,9 @@ body::before {
 .gate-avatar {
   width: 90px;
   image-rendering: pixelated;
-  margin-bottom: 10px;
 }
 
+/* ===== BUTTONS ===== */
 button {
   font-family: inherit;
   background: #ff4d6d;
@@ -68,15 +72,15 @@ button {
   cursor: pointer;
   margin-top: 10px;
   box-shadow: 3px 3px 0 #b3003c;
+  transition: 0.1s;
 }
 
 button:hover {
-  transform: translate(-1px, -1px);
+  transform: translate(-2px, -2px);
+  background: #ff6f8f;
 }
 
-/* ===== layout ===== */
-.hidden { display: none; }
-
+/* ===== TOPBAR ===== */
 .topbar {
   background: #ff4d6d;
   color: white;
@@ -84,48 +88,62 @@ button:hover {
   text-align: center;
 }
 
+/* ===== LAYOUT (CENTERED POPUP) ===== */
 .layout {
   display: flex;
+  justify-content: center;
+  align-items: center;
   gap: 20px;
-  padding: 20px;
+  min-height: calc(100vh - 60px);
 }
 
-/* ===== panels ===== */
+.hidden {
+  display: none;
+}
+
+/* ===== PANELS ===== */
 .panel, .maincard {
   background: white;
   border: 3px solid #ff4d6d;
-  box-shadow: 5px 5px 0 #ffb3c1;
-  padding: 15px;
+  box-shadow: 6px 6px 0 #ffb3c1;
+  padding: 20px;
 }
 
 .panel {
-  width: 200px;
+  width: 220px;
   text-align: center;
 }
 
+.maincard {
+  width: 400px;
+}
+
+/* ===== AVATAR ===== */
 .avatar {
   width: 100%;
   image-rendering: pixelated;
   border: 2px solid #ff4d6d;
+  margin-bottom: 10px;
 }
 
-/* nav links */
-.nav a, .socials a {
+/* ===== NAV + SOCIALS ===== */
+.nav button {
+  width: 100%;
+}
+
+.socials a {
   display: block;
   margin: 8px 0;
   text-decoration: none;
   color: #b3003c;
+  font-size: 10px;
 }
 
-.nav a:hover, .socials a:hover {
+.socials a:hover {
   color: #ff4d6d;
 }
 
-/* ===== main card ===== */
-.maincard {
-  flex: 1;
-}
-
+/* ===== TEXT ===== */
 h2 {
   font-size: 14px;
 }
@@ -135,7 +153,7 @@ h2 {
   font-size: 14px;
 }
 
-/* ===== dropdown ===== */
+/* ===== DROPDOWN ===== */
 .dropdown {
   margin-top: 20px;
 }
@@ -145,4 +163,5 @@ h2 {
   padding: 10px;
   border: 2px dashed #ff4d6d;
   font-family: "STIX Two Text", serif;
+  font-size: 14px;
 }
