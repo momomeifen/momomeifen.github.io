@@ -1,1 +1,131 @@
-asd
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>commissions - momomeifen</title>
+
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="stylesheet" href="styles.css"/>
+
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<header class="topbar">
+  <span class="homebtn" onclick="location.href='index.html'">MOMO</span>
+</header>
+
+<main class="layout">
+
+  <!-- MAIN WINDOW -->
+  <div class="window">
+
+    <div class="titlebar">
+      <div class="win-buttons">
+        <span></span><span></span><span></span>
+      </div>
+      <div class="title">commissions.exe</div>
+    </div>
+
+    <div class="window-content" style="flex-direction: column;">
+
+      <!-- PRICE IMAGE -->
+      <img src="images/prices.png" style="width:100%; border:2px solid #ff4d6d;">
+
+      <!-- PRICE TEXT -->
+      <div class="price-text">
+
+        <div class="price-col">
+          <h3>FULLY RENDERED</h3>
+          <p>$20 Headshot</p>
+          <p>$30 Bustshot</p>
+          <p>$40 Halfbody</p>
+          <p>$50 Knees n' up</p>
+          <p>$60 Full body</p>
+        </div>
+
+        <div class="price-col">
+          <h3>LINEART ONLY</h3>
+          <p>$10 Headshot</p>
+          <p>$20 Bustshot</p>
+          <p>$25 Halfbody</p>
+          <p>$30 Knees n' up</p>
+          <p>$35 Full body</p>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- WHAT I WON'T DRAW -->
+  <div class="goal-box">
+    <div class="goal-title">INFO / RULES</div>
+    <p class="goal-desc">
+      - no NSFW / explicit content<br>
+      - no proship / problematic ships<br>
+      - no hate or offensive content<br><br>
+  
+      - furries are 2x price<br>
+      - animation is half price per frame (then multiplied by frame count)
+    </p>
+  </div>
+
+  <!-- GALLERY -->
+  <div class="goal-box">
+    <div class="goal-title">GALLERY</div>
+
+    <div class="gallery" id="gallery"></div>
+
+  </div>
+
+</main>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" onclick="closeLightbox()">
+  <span id="prev" onclick="event.stopPropagation(); changeImg(-1)">‹</span>
+  <img id="lightbox-img">
+  <span id="next" onclick="event.stopPropagation(); changeImg(1)">›</span>
+</div>
+
+<script>
+const gallery = document.getElementById("gallery");
+const images = [];
+
+// LOAD 31 IMAGES
+for (let i = 1; i <= 31; i++) {
+  const img = document.createElement("img");
+  img.src = `images/art${i}.png`;
+  img.onclick = () => openLightbox(i - 1);
+
+  gallery.appendChild(img);
+  images.push(img.src);
+}
+
+// LIGHTBOX
+let currentIndex = 0;
+
+function openLightbox(index) {
+  currentIndex = index;
+  document.getElementById("lightbox").style.display = "flex";
+  document.getElementById("lightbox-img").src = images[index];
+}
+
+function closeLightbox() {
+  document.getElementById("lightbox").style.display = "none";
+}
+
+function changeImg(direction) {
+  currentIndex += direction;
+
+  if (currentIndex < 0) currentIndex = images.length - 1;
+  if (currentIndex >= images.length) currentIndex = 0;
+
+  document.getElementById("lightbox-img").src = images[currentIndex];
+}
+</script>
+
+</body>
+</html>
