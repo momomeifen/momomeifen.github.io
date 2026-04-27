@@ -5,9 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>your site</title>
 
+  <!-- favicon -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
   <link rel="stylesheet" href="styles.css"/>
 
-  <!-- kawaii pixel font + slightly “mathy” serif -->
+  <!-- fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=STIX+Two+Text:wght@400;500&display=swap" rel="stylesheet">
 </head>
 
@@ -23,18 +26,16 @@
   </div>
 </div>
 
-<!-- BACKGROUND MUSIC -->
+<!-- MUSIC -->
 <audio id="bgm" src="music/index.mp3" loop></audio>
 
 <!-- MAIN SITE -->
 <div id="site" class="hidden">
 
-  <!-- top bar -->
   <header class="topbar">
-    <div class="brand">♡ your name ♡</div>
+    ♡ your name ♡
   </header>
 
-  <!-- main layout -->
   <main class="layout">
 
     <!-- LEFT PANEL -->
@@ -43,10 +44,10 @@
       <img src="images/avatar.png" class="avatar" alt="avatar"/>
 
       <div class="nav">
-        <a href="index.html">home</a>
-        <a href="commissions.html">commissions</a>
-        <a href="faq.html">faq</a>
-        <a href="ratings.html">ratings</a>
+        <button onclick="location.href='index.html'">home</button>
+        <button onclick="location.href='commissions.html'">commissions</button>
+        <button onclick="location.href='faq.html'">faq</button>
+        <button onclick="location.href='ratings.html'">ratings</button>
       </div>
 
       <div class="socials">
@@ -57,18 +58,19 @@
 
     </section>
 
-    <!-- CENTER PANEL -->
+    <!-- MAIN CARD -->
     <section class="maincard">
 
       <h2>♡ welcome to my art world ♡</h2>
 
       <p class="desc">
-        pixel-y cherry coded commission space • cute art • y2k nostalgia • japanese kawaii vibes
+        pixel-y cherry coded commission space • cute art • y2k nostalgia • kawaii vibes
       </p>
 
       <!-- ABOUT DROPDOWN -->
       <div class="dropdown">
         <button onclick="toggleAbout()">about me ♡</button>
+
         <div id="aboutBox" class="dropcontent hidden">
           <p>
             hi !! i'm your name, i draw cute things, cherries, pink chaos, and sometimes emotional stuff too.
