@@ -13,6 +13,7 @@
 
 <body>
 
+<!-- ENTRY GATE -->
 <div id="gate">
   <div class="gate-card">
     <img src="images/avatar.png" class="gate-avatar">
@@ -21,8 +22,10 @@
   </div>
 </div>
 
+<!-- MUSIC -->
 <audio id="bgm" src="music/index.mp3" loop></audio>
 
+<!-- SITE -->
 <div id="site" class="hidden">
 
   <header class="topbar">
@@ -31,34 +34,52 @@
 
   <main class="layout">
 
-    <!-- LEFT -->
-    <section class="panel">
-      <img src="images/avatar.png" class="avatar">
+    <div class="window">
 
-      <div class="socials">
-        <a href="#">twitter</a>
-        <a href="#">instagram</a>
-        <a href="#">tiktok</a>
-      </div>
-    </section>
-
-    <!-- MAIN -->
-    <section class="maincard">
-
-      <h2>♡ welcome to my art world ♡</h2>
-
-      <p class="desc">
-        pixel-y cherry coded commission space • cute art • y2k nostalgia • kawaii vibes
-      </p>
-
-      <!-- NAV BUTTONS (NO HOME) -->
-      <div class="mainnav">
-        <button onclick="location.href='commissions.html'">commissions</button>
-        <button onclick="location.href='faq.html'">faq</button>
-        <button onclick="location.href='ratings.html'">ratings</button>
+      <!-- TITLE BAR -->
+      <div class="titlebar">
+        <div class="win-buttons">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="title">♡ yourname.exe ♡</div>
       </div>
 
-    </section>
+      <!-- CONTENT -->
+      <div class="window-content">
+
+        <!-- LEFT -->
+        <div class="left">
+          <img src="images/avatar.png" class="avatar">
+
+          <div class="socials">
+            <a href="#">twitter</a>
+            <a href="#">instagram</a>
+            <a href="#">tiktok</a>
+          </div>
+        </div>
+
+        <!-- RIGHT -->
+        <div class="right">
+
+          <h2>♡ welcome to my art world ♡</h2>
+
+          <p class="desc">
+            pixel-y cherry coded commission space • cute art • y2k nostalgia • kawaii vibes
+          </p>
+
+          <div class="mainnav">
+            <button onclick="location.href='commissions.html'">commissions</button>
+            <button onclick="location.href='faq.html'">faq</button>
+            <button onclick="location.href='ratings.html'">ratings</button>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
 
   </main>
 </div>
