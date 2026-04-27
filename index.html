@@ -18,7 +18,6 @@
     <img src="images/avatar.png" class="gate-avatar">
     <h1>♡ welcome ♡</h1>
     <button onclick="enterSite()">Enter Website</button>
-    <p class="tiny">turning on audio + loading sweets...</p>
   </div>
 </div>
 
@@ -26,14 +25,13 @@
 
 <div id="site" class="hidden">
 
-  <!-- SIMPLE HEADER -->
   <header class="topbar">
     ♡ your name ♡
   </header>
 
   <main class="layout">
 
-    <!-- LEFT PANEL -->
+    <!-- LEFT -->
     <section class="panel">
       <img src="images/avatar.png" class="avatar">
 
@@ -44,7 +42,7 @@
       </div>
     </section>
 
-    <!-- MAIN CARD -->
+    <!-- MAIN -->
     <section class="maincard">
 
       <h2>♡ welcome to my art world ♡</h2>
@@ -53,23 +51,11 @@
         pixel-y cherry coded commission space • cute art • y2k nostalgia • kawaii vibes
       </p>
 
-      <!-- NAV BUTTONS (NOW HERE) -->
+      <!-- NAV BUTTONS (NO HOME) -->
       <div class="mainnav">
-        <button onclick="location.href='index.html'">home</button>
         <button onclick="location.href='commissions.html'">commissions</button>
         <button onclick="location.href='faq.html'">faq</button>
         <button onclick="location.href='ratings.html'">ratings</button>
-      </div>
-
-      <!-- ABOUT -->
-      <div class="dropdown">
-        <button onclick="toggleAbout()">about me ♡</button>
-
-        <div id="aboutBox" class="dropcontent hidden">
-          <p>
-            hi !! i'm your name, i draw cute things, cherries, pink chaos, and sometimes emotional stuff too ♡
-          </p>
-        </div>
       </div>
 
     </section>
@@ -85,10 +71,6 @@ function enterSite() {
   const music = document.getElementById("bgm");
   music.volume = 0.4;
   music.play();
-}
-
-function toggleAbout() {
-  document.getElementById("aboutBox").classList.toggle("hidden");
 }
 </script>
 
