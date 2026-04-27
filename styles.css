@@ -7,7 +7,7 @@ body {
   overflow-x: hidden;
 }
 
-/* 🍒 INFINITE CHERRIES */
+/* 🍒 PERFECT LOOP CHERRIES (NO JUMP) */
 body::before {
   content: "";
   position: fixed;
@@ -16,21 +16,21 @@ body::before {
 
   background-image: url("images/cherries.png");
   background-repeat: repeat;
-  background-size: 220px;
+  background-size: 140px; /* smaller + cuter */
 
-  opacity: 0.35;
+  opacity: 0.38;
 
-  animation: cherryMove 40s linear infinite;
+  animation: cherryMove 18s linear infinite;
 }
 
+/* PERFECT SEAMLESS LOOP (MATCH SIZE EXACTLY) */
 @keyframes cherryMove {
-  0% { background-position: 0 0; }
-  100% { background-position: -300px 300px; }
-}
-
-/* REMOVE ANY TINT */
-body::after {
-  display: none;
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -140px 140px;
+  }
 }
 
 /* ===== GATE ===== */
@@ -55,7 +55,7 @@ body::after {
   image-rendering: pixelated;
 }
 
-/* ===== BUTTON ===== */
+/* ===== BUTTONS ===== */
 button {
   font-family: inherit;
   background: #ff4d6d;
@@ -71,12 +71,17 @@ button:hover {
   background: #ff6f8f;
 }
 
-/* ===== HEADER ===== */
+/* ===== TOP BAR ===== */
 .topbar {
   background: #ff4d6d;
   color: white;
   padding: 10px;
   text-align: center;
+}
+
+/* MOMO HOME BUTTON */
+.homebtn {
+  cursor: pointer;
 }
 
 /* ===== LAYOUT ===== */
@@ -85,10 +90,6 @@ button:hover {
   justify-content: center;
   align-items: center;
   min-height: calc(100vh - 60px);
-}
-
-.hidden {
-  display: none;
 }
 
 /* ===== WINDOW ===== */
@@ -109,7 +110,6 @@ button:hover {
   position: relative;
 }
 
-/* fake OS buttons */
 .win-buttons {
   display: flex;
   gap: 6px;
@@ -123,13 +123,11 @@ button:hover {
   border: 2px solid #b3003c;
 }
 
-/* hover effect */
 .win-buttons span:hover {
   background: #ffd1dc;
   cursor: pointer;
 }
 
-/* centered title */
 .title {
   position: absolute;
   left: 50%;
