@@ -1,13 +1,13 @@
 /* ===== BASE ===== */
 body {
   margin: 0;
-  background: #fff0f3;
+  background: #ffe6eb; /* brighter so cherries pop more */
   font-family: "Press Start 2P", monospace;
   color: #b3003c;
   overflow-x: hidden;
 }
 
-/* 🍒 CHERRY BACKGROUND */
+/* 🍒 INFINITE MOVING CHERRIES (FIXED) */
 body::before {
   content: "";
   position: fixed;
@@ -16,28 +16,32 @@ body::before {
 
   background-image: url("images/cherries.png");
   background-repeat: repeat;
-  background-size: 200px;
+  background-size: 220px;
 
-  opacity: 0.15;
-  pointer-events: none;
+  opacity: 0.2;
 
-  animation: cherryDrift 60s linear infinite;
+  animation: cherryMove 40s linear infinite;
 }
 
-@keyframes cherryDrift {
-  0% { transform: translate(0, 0); }
-  100% { transform: translate(-200px, 200px); }
+/* THIS is the important fix */
+@keyframes cherryMove {
+  0% {
+    background-position: 0px 0px;
+  }
+  100% {
+    background-position: -300px 300px;
+  }
 }
 
-/* soft glow layer */
+/* glow layer */
 body::after {
   content: "";
   position: fixed;
   inset: 0;
   z-index: -2;
   background:
-    radial-gradient(circle at 20% 20%, #ffd1dc55, transparent 60%),
-    radial-gradient(circle at 80% 70%, #ff4d6d33, transparent 60%);
+    radial-gradient(circle at 20% 20%, #ffd1dc88, transparent 60%),
+    radial-gradient(circle at 80% 70%, #ff4d6d44, transparent 60%);
 }
 
 /* ===== GATE ===== */
@@ -46,7 +50,7 @@ body::after {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: radial-gradient(circle, #ffd1dc, #fff0f3);
+  background: radial-gradient(circle, #ffd1dc, #ffe6eb);
 }
 
 .gate-card {
@@ -62,7 +66,7 @@ body::after {
   image-rendering: pixelated;
 }
 
-/* ===== BUTTONS ===== */
+/* ===== BUTTON ===== */
 button {
   font-family: inherit;
   background: #ff4d6d;
@@ -70,7 +74,6 @@ button {
   border: none;
   padding: 10px;
   cursor: pointer;
-  margin-top: 10px;
   box-shadow: 3px 3px 0 #b3003c;
   transition: 0.1s;
 }
@@ -80,7 +83,7 @@ button:hover {
   background: #ff6f8f;
 }
 
-/* ===== TOPBAR ===== */
+/* ===== TOP BAR ===== */
 .topbar {
   background: #ff4d6d;
   color: white;
@@ -88,20 +91,32 @@ button:hover {
   text-align: center;
 }
 
-/* ===== LAYOUT (CENTERED POPUP) ===== */
+.brand {
+  margin-bottom: 10px;
+}
+
+/* 🍡 BUTTON ROW */
+.topnav {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* ===== LAYOUT ===== */
 .layout {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 20px;
-  min-height: calc(100vh - 60px);
+  min-height: calc(100vh - 100px);
 }
 
 .hidden {
   display: none;
 }
 
-/* ===== PANELS ===== */
+/* ===== CARDS ===== */
 .panel, .maincard {
   background: white;
   border: 3px solid #ff4d6d;
@@ -126,11 +141,7 @@ button:hover {
   margin-bottom: 10px;
 }
 
-/* ===== NAV + SOCIALS ===== */
-.nav button {
-  width: 100%;
-}
-
+/* ===== SOCIALS ===== */
 .socials a {
   display: block;
   margin: 8px 0;
