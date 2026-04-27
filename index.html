@@ -11,9 +11,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=STIX+Two+Text:wght@400;500&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<body class="locked">
 
-<!-- ENTRY GATE (ONLY SHOWS ON FIRST LOAD) -->
+<!-- ENTRY GATE -->
 <div id="gate">
   <div class="gate-card">
     <img src="images/gate-avatar.webp" class="gate-avatar">
@@ -36,7 +36,6 @@
 
     <div class="window">
 
-      <!-- TITLE BAR -->
       <div class="titlebar">
         <div class="win-buttons">
           <span></span>
@@ -46,10 +45,8 @@
         <div class="title">momomeifen.exe</div>
       </div>
 
-      <!-- CONTENT -->
       <div class="window-content">
 
-        <!-- LEFT -->
         <div class="left">
           <img src="images/avatar.png" class="avatar">
 
@@ -61,7 +58,6 @@
           </div>
         </div>
 
-        <!-- RIGHT -->
         <div class="right">
 
           <h2>♡ welcome to my art world ♡</h2>
@@ -86,20 +82,17 @@
 </div>
 
 <script>
-let hasEntered = false;
-
 function enterSite() {
   document.getElementById("gate").style.display = "none";
   document.getElementById("site").classList.remove("hidden");
 
+  document.body.classList.remove("locked");
+
   const music = document.getElementById("bgm");
   music.volume = 0.4;
   music.play();
-
-  hasEntered = true;
 }
 
-/* MOMO = always returns WITHOUT reloading gate */
 function goHome() {
   document.querySelector(".window").scrollIntoView({ behavior: "smooth" });
 }
