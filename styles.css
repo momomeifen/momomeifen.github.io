@@ -191,7 +191,8 @@ h2 {
 
 .desc {
   font-family: "Press Start 2P", monospace;
-  font-size: 14px;
+  font-size: 10px;
+  opacity: 0.5;
 }
 
 /* ===== MOBILE FIX ===== */
