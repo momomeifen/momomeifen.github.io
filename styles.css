@@ -386,3 +386,24 @@ h2 {
 .backbtn:hover {
   transform: translate(-1px, -1px);
 }
+
+/* BACK BUTTON INSIDE WINDOW */
+.left-controls {
+  display: flex;
+  align-items: center;
+  margin-left: 6px;
+}
+
+.backlink {
+  font-size: 10px;
+  cursor: pointer;
+  padding: 2px 6px;
+  border: 1px solid white;
+  background: #ff6f8f;
+  box-shadow: 2px 2px 0 #b3003c;
+  color: white;
+}
+
+.backlink:hover {
+  transform: translate(-1px, -1px);
+}
