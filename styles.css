@@ -1,13 +1,13 @@
 /* ===== BASE ===== */
 body {
   margin: 0;
-  background: #ffe6eb; /* brighter so cherries pop more */
+  background: #ffffff; /* PURE WHITE */
   font-family: "Press Start 2P", monospace;
   color: #b3003c;
   overflow-x: hidden;
 }
 
-/* 🍒 INFINITE MOVING CHERRIES (FIXED) */
+/* 🍒 INFINITE CHERRIES */
 body::before {
   content: "";
   position: fixed;
@@ -18,30 +18,25 @@ body::before {
   background-repeat: repeat;
   background-size: 220px;
 
-  opacity: 0.2;
+  opacity: 0.18;
 
   animation: cherryMove 40s linear infinite;
 }
 
-/* THIS is the important fix */
 @keyframes cherryMove {
-  0% {
-    background-position: 0px 0px;
-  }
-  100% {
-    background-position: -300px 300px;
-  }
+  0% { background-position: 0 0; }
+  100% { background-position: -300px 300px; }
 }
 
-/* glow layer */
+/* subtle glow */
 body::after {
   content: "";
   position: fixed;
   inset: 0;
   z-index: -2;
   background:
-    radial-gradient(circle at 20% 20%, #ffd1dc88, transparent 60%),
-    radial-gradient(circle at 80% 70%, #ff4d6d44, transparent 60%);
+    radial-gradient(circle at 20% 20%, #ffd1dc66, transparent 60%),
+    radial-gradient(circle at 80% 70%, #ff4d6d33, transparent 60%);
 }
 
 /* ===== GATE ===== */
@@ -50,7 +45,7 @@ body::after {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: radial-gradient(circle, #ffd1dc, #ffe6eb);
+  background: radial-gradient(circle, #ffffff, #ffeef2);
 }
 
 .gate-card {
@@ -83,24 +78,12 @@ button:hover {
   background: #ff6f8f;
 }
 
-/* ===== TOP BAR ===== */
+/* ===== HEADER ===== */
 .topbar {
   background: #ff4d6d;
   color: white;
   padding: 10px;
   text-align: center;
-}
-
-.brand {
-  margin-bottom: 10px;
-}
-
-/* 🍡 BUTTON ROW */
-.topnav {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  flex-wrap: wrap;
 }
 
 /* ===== LAYOUT ===== */
@@ -109,7 +92,7 @@ button:hover {
   justify-content: center;
   align-items: center;
   gap: 20px;
-  min-height: calc(100vh - 100px);
+  min-height: calc(100vh - 60px);
 }
 
 .hidden {
@@ -131,6 +114,19 @@ button:hover {
 
 .maincard {
   width: 400px;
+}
+
+/* ===== NAV (MAIN CARD) ===== */
+.mainnav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 15px;
+  justify-content: center;
+}
+
+.mainnav button {
+  flex: 1 1 45%;
 }
 
 /* ===== AVATAR ===== */
