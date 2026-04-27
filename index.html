@@ -5,60 +5,53 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>your site</title>
 
-  <!-- favicon -->
   <link rel="icon" type="image/png" href="images/favicon.png">
-
   <link rel="stylesheet" href="styles.css"/>
 
-  <!-- fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=STIX+Two+Text:wght@400;500&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<!-- ENTRY GATEWAY -->
 <div id="gate">
   <div class="gate-card">
-    <img src="images/avatar.png" class="gate-avatar" alt="avatar">
+    <img src="images/avatar.png" class="gate-avatar">
     <h1>♡ welcome ♡</h1>
     <button onclick="enterSite()">Enter Website</button>
     <p class="tiny">turning on audio + loading sweets...</p>
   </div>
 </div>
 
-<!-- MUSIC -->
 <audio id="bgm" src="music/index.mp3" loop></audio>
 
-<!-- MAIN SITE -->
 <div id="site" class="hidden">
 
+  <!-- NAV BAR BUTTONS -->
   <header class="topbar">
-    ♡ your name ♡
+    <div class="brand">♡ your name ♡</div>
+
+    <div class="topnav">
+      <button onclick="location.href='index.html'">home</button>
+      <button onclick="location.href='commissions.html'">commissions</button>
+      <button onclick="location.href='faq.html'">faq</button>
+      <button onclick="location.href='ratings.html'">ratings</button>
+    </div>
   </header>
 
   <main class="layout">
 
-    <!-- LEFT PANEL -->
+    <!-- LEFT -->
     <section class="panel">
-
-      <img src="images/avatar.png" class="avatar" alt="avatar"/>
-
-      <div class="nav">
-        <button onclick="location.href='index.html'">home</button>
-        <button onclick="location.href='commissions.html'">commissions</button>
-        <button onclick="location.href='faq.html'">faq</button>
-        <button onclick="location.href='ratings.html'">ratings</button>
-      </div>
+      <img src="images/avatar.png" class="avatar">
 
       <div class="socials">
-        <a href="#" target="_blank">twitter</a>
-        <a href="#" target="_blank">instagram</a>
-        <a href="#" target="_blank">tiktok</a>
+        <a href="#">twitter</a>
+        <a href="#">instagram</a>
+        <a href="#">tiktok</a>
       </div>
-
     </section>
 
-    <!-- MAIN CARD -->
+    <!-- MAIN -->
     <section class="maincard">
 
       <h2>♡ welcome to my art world ♡</h2>
@@ -67,14 +60,12 @@
         pixel-y cherry coded commission space • cute art • y2k nostalgia • kawaii vibes
       </p>
 
-      <!-- ABOUT DROPDOWN -->
       <div class="dropdown">
         <button onclick="toggleAbout()">about me ♡</button>
 
         <div id="aboutBox" class="dropcontent hidden">
           <p>
-            hi !! i'm your name, i draw cute things, cherries, pink chaos, and sometimes emotional stuff too.
-            i take commissions and post art online ♡
+            hi !! i'm your name, i draw cute things, cherries, pink chaos, and sometimes emotional stuff too ♡
           </p>
         </div>
       </div>
