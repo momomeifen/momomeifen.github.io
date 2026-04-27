@@ -9,6 +9,77 @@
   <link rel="stylesheet" href="styles.css"/>
 
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=STIX+Two+Text:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    .manga-tabs {
+      position: fixed;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    
+    /* EACH TAB "BUMP" */
+    .manga-tab {
+      display: flex;
+      align-items: center;
+      transform: translateX(-85px);
+      transition: transform 0.35s ease;
+    }
+    
+    /* SLIDE OUT ON HOVER */
+    .manga-tab:hover {
+      transform: translateX(0);
+    }
+    
+    /* COVER */
+    .manga-cover {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      border: 2px solid #ff4d6d;
+      background: white;
+    }
+    
+    /* PANEL */
+    .manga-panel {
+      background: white;
+      border: 2px solid #ff4d6d;
+      border-left: none;
+      padding: 6px;
+      width: 160px;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .manga-title {
+      font-size: 10px;
+      margin-bottom: 6px;
+      color: #b3003c;
+    }
+    
+    /* LINKS */
+    .manga-panel a {
+      font-size: 9px;
+      text-decoration: none;
+      color: #b3003c;
+      margin: 2px 0;
+    }
+    
+    .manga-panel a:hover {
+      color: #ff4d6d;
+    }
+    
+    /* MOBILE: disable it */
+    @media (max-width: 800px) {
+      .manga-tabs {
+        display: none;
+      }
+    }
+  </style>
 </head>
 
 <body class="locked">
