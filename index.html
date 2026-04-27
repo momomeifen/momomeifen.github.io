@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -14,6 +15,7 @@
 <body class="locked">
 
 <!-- ENTRY GATE -->
+
 <div id="gate">
   <div class="gate-card">
     <img src="images/gate-avatar.webp" class="gate-avatar">
@@ -23,9 +25,11 @@
 </div>
 
 <!-- MUSIC -->
+
 <audio id="bgm" src="music/index.mp3" loop></audio>
 
 <!-- SITE -->
+
 <div id="site" class="hidden">
 
   <header class="topbar">
@@ -34,51 +38,86 @@
 
   <main class="layout">
 
-    <div class="window">
+```
+<div class="window">
 
-      <div class="titlebar">
-        <div class="win-buttons">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        <div class="title">momomeifen.exe</div>
+  <div class="titlebar">
+    <div class="win-buttons">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="title">momomeifen.exe</div>
+  </div>
+
+  <div class="window-content">
+
+    <!-- MAIL ICON -->
+    <div class="mail-icon" onclick="openMail()">
+      ✉️
+      <span class="notif">NEW!</span>
+    </div>
+
+    <div class="left">
+      <img src="images/avatar.png" class="avatar">
+
+      <div class="socials">
+        <a href="#">bsky</a>
+        <a href="#">twitter</a>
+        <a href="#">tiktok</a>
+        <a href="#">youtube</a>
       </div>
+    </div>
 
-      <div class="window-content">
+    <div class="right">
 
-        <div class="left">
-          <img src="images/avatar.png" class="avatar">
+      <h2>YOOOOHHH</h2>
 
-          <div class="socials">
-            <a href="#">bsky</a>
-            <a href="#">twitter</a>
-            <a href="#">tiktok</a>
-            <a href="#">youtube</a>
-          </div>
-        </div>
+      <p class="desc">
+        i'm momomeifen but you may call me just momo if you like :D im an artist and i love love LOOOOOOOOVE drawing, please take a look at my art and commission me if you're interested! im saving up for a new ipad at the moment and it would help me and my art journey out tremendously!!!! ANY SUPPORT WOULD BE HELPFUL! (˶ˆᗜˆ˵)
+      </p>
 
-        <div class="right">
-
-          <h2>YOOOOHHH</h2>
-
-          <p class="desc">
-            i'm momomeifen but you may call me just momo if you like :D im an artist and i love love LOOOOOOOOVE drawing, please take a look at my art and commission me if you're interested! im saving up for a new ipad at the moment and it would help me and my art journey out tremendously!!!! ANY SUPPORT WOULD BE HELPFUL! (˶ˆᗜˆ˵)
-          </p>
-
-          <div class="mainnav">
-            <button onclick="location.href='commissions.html'">commissions</button>
-            <button onclick="location.href='faq.html'">faq</button>
-            <button onclick="location.href='ratings.html'">ratings</button>
-          </div>
-
-        </div>
-
+      <div class="mainnav">
+        <button onclick="location.href='commissions.html'">commissions</button>
+        <button onclick="location.href='faq.html'">faq</button>
+        <button onclick="location.href='ratings.html'">ratings</button>
       </div>
 
     </div>
 
+  </div>
+
+</div>
+```
+
   </main>
+</div>
+
+<!-- MAIL POPUP -->
+
+<div id="mailPopup" class="popup hidden">
+  <div class="popup-card">
+
+```
+<div class="popup-titlebar">
+  <span>new message.exe</span>
+  <button onclick="closeMail()">X</button>
+</div>
+
+<div class="popup-content">
+
+  <img src="images/YOUR_IMAGE_HERE.png" class="popup-img">
+
+  <h2>YOOOOHHH</h2>
+
+  <p class="desc">
+    i'm momomeifen but you may call me just momo if you like :D im an artist and i love love LOOOOOOOOVE drawing, please take a look at my art and commission me if you're interested! im saving up for a new ipad at the moment and it would help me and my art journey out tremendously!!!! ANY SUPPORT WOULD BE HELPFUL! (˶ˆᗜˆ˵)
+  </p>
+
+</div>
+```
+
+  </div>
 </div>
 
 <script>
@@ -95,6 +134,14 @@ function enterSite() {
 
 function goHome() {
   document.querySelector(".window").scrollIntoView({ behavior: "smooth" });
+}
+
+function openMail() {
+  document.getElementById("mailPopup").classList.remove("hidden");
+}
+
+function closeMail() {
+  document.getElementById("mailPopup").classList.add("hidden");
 }
 </script>
 
