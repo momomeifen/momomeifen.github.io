@@ -34,6 +34,7 @@
 
   <main class="layout">
 
+    <!-- WINDOW -->
     <div class="window">
 
       <div class="titlebar">
@@ -66,7 +67,6 @@
             <button onclick="location.href='ratings.html'">ratings</button>
           </div>
         
-          <!-- NEW POPUP BOX -->
           <div class="popup-msg">
             <div class="popup-title">NEW MESSAGE!</div>
             <h2>YOOOOHHH</h2>
@@ -78,7 +78,19 @@
         </div>
 
       </div>
+    </div>
 
+    <!-- GOAL BAR (NEW SECTION UNDER WINDOW) -->
+    <div class="goal-box">
+      <div class="goal-title">SAVING UP FOR NEW TABLET!</div>
+
+      <div class="healthbar">
+        <div class="healthfill" id="healthfill"></div>
+      </div>
+
+      <div class="goal-text">
+        $40 / $1200
+      </div>
     </div>
 
   </main>
@@ -94,6 +106,15 @@ function enterSite() {
   const music = document.getElementById("bgm");
   music.volume = 0.4;
   music.play();
+
+  // animate goal bar
+  const currentAmount = 40;
+  const goalAmount = 1200;
+  const percent = (currentAmount / goalAmount) * 100;
+
+  setTimeout(() => {
+    document.getElementById("healthfill").style.width = percent + "%";
+  }, 300);
 }
 
 function goHome() {
