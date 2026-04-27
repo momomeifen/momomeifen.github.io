@@ -1,7 +1,7 @@
 /* ===== BASE ===== */
 body {
   margin: 0;
-  background: #ffffff; /* PURE WHITE */
+  background: #ffffff;
   font-family: "Press Start 2P", monospace;
   color: #b3003c;
   overflow-x: hidden;
@@ -18,7 +18,7 @@ body::before {
   background-repeat: repeat;
   background-size: 220px;
 
-  opacity: 0.35; /* LESS TRANSPARENT */
+  opacity: 0.35;
 
   animation: cherryMove 40s linear infinite;
 }
@@ -28,7 +28,7 @@ body::before {
   100% { background-position: -300px 300px; }
 }
 
-/* ❌ REMOVE ALL PINK GLOW */
+/* REMOVE ANY TINT */
 body::after {
   display: none;
 }
@@ -39,7 +39,7 @@ body::after {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #ffffff; /* WHITE, no gradient */
+  background: #ffffff;
 }
 
 .gate-card {
@@ -84,7 +84,6 @@ button:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 20px;
   min-height: calc(100vh - 60px);
 }
 
@@ -92,36 +91,82 @@ button:hover {
   display: none;
 }
 
-/* ===== CARDS ===== */
-.panel, .maincard {
+/* ===== WINDOW ===== */
+.window {
+  width: 650px;
   background: white;
   border: 3px solid #ff4d6d;
-  box-shadow: 6px 6px 0 #ffb3c1;
-  padding: 20px;
+  box-shadow: 8px 8px 0 #ffb3c1;
 }
 
-.panel {
-  width: 220px;
+/* TITLE BAR */
+.titlebar {
+  background: #ff4d6d;
+  color: white;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+/* fake OS buttons */
+.win-buttons {
+  display: flex;
+  gap: 6px;
+  margin-left: 6px;
+}
+
+.win-buttons span {
+  width: 12px;
+  height: 12px;
+  background: white;
+  border: 2px solid #b3003c;
+}
+
+/* hover effect */
+.win-buttons span:hover {
+  background: #ffd1dc;
+  cursor: pointer;
+}
+
+/* centered title */
+.title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 10px;
+}
+
+/* CONTENT */
+.window-content {
+  display: flex;
+  padding: 20px;
+  gap: 20px;
+}
+
+/* LEFT */
+.left {
+  width: 200px;
   text-align: center;
 }
 
-.maincard {
-  width: 400px;
+/* RIGHT */
+.right {
+  flex: 1;
 }
 
-/* ===== NAV ===== */
+/* NAV */
 .mainnav {
   display: flex;
   gap: 10px;
   margin-top: 15px;
-  justify-content: center;
 }
 
 .mainnav button {
   flex: 1;
 }
 
-/* ===== AVATAR ===== */
+/* AVATAR */
 .avatar {
   width: 100%;
   image-rendering: pixelated;
@@ -129,7 +174,7 @@ button:hover {
   margin-bottom: 10px;
 }
 
-/* ===== SOCIALS ===== */
+/* SOCIALS */
 .socials a {
   display: block;
   margin: 8px 0;
@@ -142,7 +187,7 @@ button:hover {
   color: #ff4d6d;
 }
 
-/* ===== TEXT ===== */
+/* TEXT */
 h2 {
   font-size: 14px;
 }
