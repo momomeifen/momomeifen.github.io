@@ -7,7 +7,13 @@ body {
   overflow-x: hidden;
 }
 
-/* 🍒 PERFECT LOOP CHERRIES (NO JUMP) */
+/* LOCK SCROLL UNTIL ENTER */
+body.locked {
+  overflow: hidden;
+  height: 100vh;
+}
+
+/* BACKGROUND CHERRIES */
 body::before {
   content: "";
   position: fixed;
@@ -16,30 +22,29 @@ body::before {
 
   background-image: url("images/cherries.png");
   background-repeat: repeat;
-  background-size: 140px; /* smaller + cuter */
+  background-size: 140px;
 
   opacity: 0.38;
 
   animation: cherryMove 18s linear infinite;
 }
 
-/* PERFECT SEAMLESS LOOP (MATCH SIZE EXACTLY) */
 @keyframes cherryMove {
-  0% {
-    background-position: 0 0;
-  }
-  100% {
-    background-position: -140px 140px;
-  }
+  0% { background-position: 0 0; }
+  100% { background-position: -140px 140px; }
 }
 
 /* ===== GATE ===== */
 #gate {
-  height: 100vh;
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   background: #ffffff;
+  z-index: 9999;
 }
 
 .gate-card {
@@ -51,7 +56,7 @@ body::before {
 }
 
 .gate-avatar {
-  width: 20rem;
+  width: min(300px, 70vw);
   image-rendering: pixelated;
 }
 
@@ -79,7 +84,6 @@ button:hover {
   text-align: center;
 }
 
-/* MOMO HOME BUTTON */
 .homebtn {
   cursor: pointer;
 }
@@ -94,7 +98,7 @@ button:hover {
 
 /* ===== WINDOW ===== */
 .window {
-  width: 650px;
+  width: min(650px, 92vw);
   background: white;
   border: 3px solid #ff4d6d;
   box-shadow: 8px 8px 0 #ffb3c1;
@@ -121,11 +125,6 @@ button:hover {
   height: 12px;
   background: white;
   border: 2px solid #b3003c;
-}
-
-.win-buttons span:hover {
-  background: #ffd1dc;
-  cursor: pointer;
 }
 
 .title {
@@ -193,4 +192,24 @@ h2 {
 .desc {
   font-family: "STIX Two Text", serif;
   font-size: 14px;
+}
+
+/* ===== MOBILE FIX ===== */
+@media (max-width: 700px) {
+  .window-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .left {
+    width: 100%;
+  }
+
+  .avatar {
+    width: 60%;
+  }
+
+  .mainnav {
+    flex-direction: column;
+  }
 }
