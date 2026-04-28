@@ -78,7 +78,9 @@
       - animation is half price per frame (then multiplied by frame count)
     </p>
   </div>
-
+  
+  <audio id="bgm" src="music/commissions.mp3" loop></audio>
+  
   <!-- GALLERY -->
   <div class="goal-box">
     <div class="goal-title">GALLERY</div>
@@ -131,6 +133,11 @@ function changeImg(direction) {
 
   document.getElementById("lightbox-img").src = images[currentIndex];
 }
+
+  const music = document.getElementById("bgm");
+  music.volume = 0.4;
+  music.play();
+
 </script>
 
 </body>
